@@ -19,7 +19,7 @@ jobs:
           cache: false
       - name: run cov
         run: |
-          go test ./... -cover -coverprofile=coverage.out
+          go test ./... -cover -coverprofile=coverage.out -json > report.json
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         # with:

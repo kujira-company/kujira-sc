@@ -20,3 +20,11 @@ func Command1(n int) error {
 	}
 	return nil
 }
+
+func CommandHogeFuga(n int) string {
+	if n%2 == 0 {
+		return "hoge"
+	} else {
+		return "fuga"
+	}
+}
