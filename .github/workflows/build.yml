@@ -19,8 +19,7 @@ jobs:
           cache: false
       - name: run cov
         run: |
-          go install github.com/ory/go-acc@latest
-          go-acc ./... -o coverage.out -- -v -json > report.json
+          go test ./... -cover -coverprofile=coverage.out -json > report.json
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         # with:

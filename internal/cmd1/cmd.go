@@ -22,6 +22,7 @@ func Command1(n int) error {
 }
 
 func CommandHogeFuga(n int) string {
+	// TODO: 0の場合に別の文字列を返す
 	if n%2 == 0 {
 		return "hoge"
 	} else {
