@@ -28,3 +28,8 @@ func CommandHogeFuga(n int) string {
 		return "fuga"
 	}
 }
+
+func CommandUnimplemented(n int) string {
+	// TODO: implement
+	return "unimplemented"
+}
