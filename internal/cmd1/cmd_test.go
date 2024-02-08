@@ -45,3 +45,36 @@ func TestCommand1(t *testing.T) {
 		})
 	}
 }
+
+func TestCommandHogeFuga(t *testing.T) {
+	tests := []struct {
+		name string
+		in   int
+		got  string
+	}{
+		{
+			"case zero",
+			0,
+			"hoge",
+		},
+		{
+			"case odd",
+			1,
+			"fuga",
+		},
+		{
+			"case even",
+			2,
+			"hoge",
+		},
+	}
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			got := cmd1.CommandHogeFuga(tt.in)
+			if got != tt.got {
+				t.Fatalf(cmp.Diff(got, tt.got))
+			}
+		})
+	}
+}

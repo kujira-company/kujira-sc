@@ -19,8 +19,13 @@ jobs:
           cache: false
       - name: run cov
         run: |
-          go install github.com/ory/go-acc@latest
-          go-acc ./... -o coverage.out -- -v -json > report.json
+          go test ./... -cover -coverprofile=coverage.out -json > report.json
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v3.7.0
+        with:
+          version: v1.55.2
+          args: --issues-exit-code=0 --timeout=30m --out-format=checkstyle:golangci-lint-report.xml
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         # with:

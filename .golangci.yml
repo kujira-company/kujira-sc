@@ -1,0 +1,35 @@
+run:
+  go: "1.21"
+  concurrency: 2
+  skip-dirs:
+    - vendor
+    - docker
+    - "^bazel"
+linters:
+  disable-all: true
+  enable:
+    - unused
+    - errcheck
+    - gosimple
+    - govet
+    - staticcheck
+    - stylecheck
+    - ineffassign
+    - typecheck
+    - thelper
+    - misspell
+    - gofmt
+    - goimports
+
+linters-settings:
+  stylecheck:
+    checks:
+      - all
+      - "-ST1000" # Incorrect or missing package comment
+issues:
+  exclude-use-default: false
+  exclude-rules:
+    - linters:
+        - stylecheck
+      # パッケージ名に underscoreを許容
+      text: "ST1003: should not use underscores in package names"
