@@ -21,8 +21,6 @@ func Command1(n int) error {
 	return nil
 }
 
-var unused = "unused"
-
 func CommandHogeFuga(n int) string {
 	// TODO: 0の場合に別の文字列を返す
 	if n%2 == 0 {
